@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificação de Senha - Casamento M&V</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #fff9f9 url('https://i.imgur.com/3uAZ1CJ.png') no-repeat center top;
+      background-size: cover;
+      text-align: center;
+      padding: 60px 20px;
+      color: #5c3d3d;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 40px;
+      border-radius: 20px;
+      border: 2px solid #d1b7c5;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 15px #eee;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .monograma {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    input[type="password"] {
+      padding: 12px;
+      width: 80%;
+      border: 1px solid #c9a9b0;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 30px;
+      background-color: #a37e9e;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://i.imgur.com/3uAZ1CJ.png" alt="Monograma" class="monograma">
+    <h1>Mickael & Vitória</h1>
+    <p>Digite a senha para desbloquear a surpresa:</p>
+
+    <input type="password" id="senha" placeholder="Digite a senha..." />
+    <br>
+    <button onclick="verificarSenha()">Verificar</button>
+
+    <div class="message" id="mensagem"></div>
+  </div>
+
+  <script>
+    function verificarSenha() {
+      const senhaCorreta = "amor2025";
+      const input = document.getElementById("senha").value;
+      const mensagem = document.getElementById("mensagem");
+
+      if (input === senhaCorreta) {
+        mensagem.innerHTML = "🎉 Senha correta! Você desbloqueou a surpresa!";
+        mensagem.className = "message success";
+      } else {
+        mensagem.innerHTML = "❌ Senha incorreta. Tente novamente.";
+        mensagem.className = "message error";
+      }
+    }
+  </script>
+
+</body>
+</html>
